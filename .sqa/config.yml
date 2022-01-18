@@ -11,30 +11,34 @@ environment:
 sqa_criteria:
   QC.Acc:
     repos:
-      github.com/indigo-dc/jenkins-pipeline-library:
+      github.com/indigo-dc/jenkins-pipeline-library git:
         commands:
-        - /usr/bin/env sh .sqa/script.paltry-pear-eagle.sh
-        container: qc.acc_woozy-beige-panda
+        - /usr/bin/env sh .sqa/script.pokey-brown-baboon.sh
+        container: qc.acc_hasty-silver-setter
   QC.Doc:
     repos:
-      github.com/indigo-dc/jenkins-pipeline-library:
+      github.com/indigo-dc/jenkins-pipeline-library find_readme.py:
         commands:
-        - /usr/bin/env sh .sqa/script.stuffy-persimmon-hummingbird.sh
-        container: qc.doc_lanky-chestnut-moorhen
-      github.com/indigo-dc/jenkins-pipeline-library__2:
+        - /usr/bin/env sh .sqa/script.geeky-corn-maltese.sh
+        container: qc.doc_gimpy-cream-hedgehog
+      github.com/indigo-dc/jenkins-pipeline-library markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.gloppy-rust-baboon.sh
-        container: qc.doc_chewy-gamboge-ladybird
+        - /usr/bin/env sh .sqa/script.lanky-brown-newt.sh
+        container: qc.doc_geeky-purple-hedgehog
+      github.com/indigo-dc/jenkins-pipeline-library restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.blurry-razzmatazz-reindeer.sh
+        container: qc.doc_snappy-pumpkin-lemur
   QC.Lic:
     repos:
-      github.com/indigo-dc/jenkins-pipeline-library:
+      github.com/indigo-dc/jenkins-pipeline-library licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.frumpy-chestnut-cattle.sh
-        container: qc.lic_craggy-olive-burmese
+        - /usr/bin/env sh .sqa/script.flaky-rust-chameleon.sh
+        container: qc.lic_squeaky-cerise-zebra
   QC.Met:
     repos:
-      github.com/indigo-dc/jenkins-pipeline-library:
+      github.com/indigo-dc/jenkins-pipeline-library validate_codemeta:
         commands:
-        - /usr/bin/env sh .sqa/script.homely-red-zebu.sh
-        container: qc.met_skimpy-wheat-eleuth
+        - /usr/bin/env sh .sqa/script.slaphappy-black-collie.sh
+        container: qc.met_lovely-russet-gar
 timeout: 600
