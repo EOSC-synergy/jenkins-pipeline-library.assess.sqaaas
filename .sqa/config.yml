@@ -1,0 +1,40 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: staging
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/indigo-dc/jenkins-pipeline-library:
+      repo: https://github.com/indigo-dc/jenkins-pipeline-library
+environment:
+  JPL_KEEPGOING: true
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/indigo-dc/jenkins-pipeline-library:
+        commands:
+        - /usr/bin/env sh .sqa/script.paltry-pear-eagle.sh
+        container: qc.acc_woozy-beige-panda
+  QC.Doc:
+    repos:
+      github.com/indigo-dc/jenkins-pipeline-library:
+        commands:
+        - /usr/bin/env sh .sqa/script.stuffy-persimmon-hummingbird.sh
+        container: qc.doc_lanky-chestnut-moorhen
+      github.com/indigo-dc/jenkins-pipeline-library__2:
+        commands:
+        - /usr/bin/env sh .sqa/script.gloppy-rust-baboon.sh
+        container: qc.doc_chewy-gamboge-ladybird
+  QC.Lic:
+    repos:
+      github.com/indigo-dc/jenkins-pipeline-library:
+        commands:
+        - /usr/bin/env sh .sqa/script.frumpy-chestnut-cattle.sh
+        container: qc.lic_craggy-olive-burmese
+  QC.Met:
+    repos:
+      github.com/indigo-dc/jenkins-pipeline-library:
+        commands:
+        - /usr/bin/env sh .sqa/script.homely-red-zebu.sh
+        container: qc.met_skimpy-wheat-eleuth
+timeout: 600
