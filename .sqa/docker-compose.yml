@@ -1,5 +1,5 @@
 services:
-  qc.acc_flaky-saffron-bloodhound:
+  qc.acc_gamboge_plucky_chinchilla:
     command: sleep 6000000
     image: bitnami/git:2.34.1
     volumes:
@@ -7,17 +7,7 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.doc_hazy-seashell-penguin:
-    build:
-      context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Doc
-      dockerfile: Dockerfile
-    command: sleep 6000000
-    volumes:
-    - source: ./
-      target: /sqaaas-build
-      type: bind
-    working_dir: /sqaaas-build
-  qc.doc_sleepy-celadon-eleuth:
+  qc.doc_incarnadine_vibrant_gazelle:
     command: sleep 6000000
     image: bitnami/git:2.34.1
     volumes:
@@ -25,7 +15,7 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.doc_ugly-lavender-schnauzer:
+  qc.doc_periwinkle_apprehensive_pegasus:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Doc/markdownlint
       dockerfile: Dockerfile
@@ -35,7 +25,7 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.doc_zippy-black-newt:
+  qc.doc_rose_understanding_sloth:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Doc/restructuredtext-lint
       dockerfile: Dockerfile
@@ -45,9 +35,9 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.lic_fuzzy-celadon-falcon:
+  qc.doc_salmon_spontaneous_turkey:
     build:
-      context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Lic/licensee
+      context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Doc
       dockerfile: Dockerfile
     command: sleep 6000000
     volumes:
@@ -55,7 +45,15 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.met_baggy-dandelion-cuscus:
+  qc.lic_peach_understanding_camel:
+    command: sleep 6000000
+    image: eoscsynergy/sqaaas-licensee:9.17.0
+    volumes:
+    - source: ./
+      target: /sqaaas-build
+      type: bind
+    working_dir: /sqaaas-build
+  qc.met_lapis_tolerant_flamingo:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Met/cff-converter-python
       dockerfile: Dockerfile
@@ -65,7 +63,7 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.sec_cranky-russet-koala:
+  qc.sec_gamboge_melancholy_horse:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sec/bandit
       dockerfile: Dockerfile
@@ -75,15 +73,23 @@ services:
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.sty_hasty-heliotrope-turkey:
+  qc.sty_magenta_sympathetic_penguin:
     command: sleep 6000000
-    image: pipelinecomponents/flake8:0.9.0
+    image: pipelinecomponents/flake8:0.19.0
     volumes:
     - source: ./
       target: /sqaaas-build
       type: bind
     working_dir: /sqaaas-build
-  qc.ver_paltry-lilac-bloodhound:
+  qc.uni_gold_carefree_hornbill:
+    command: sleep 6000000
+    image: eoscsynergy/sqaaas-pytest:7.1.3-alpha
+    volumes:
+    - source: ./
+      target: /sqaaas-build
+      type: bind
+    working_dir: /sqaaas-build
+  qc.ver_nutmeg_ardent_chinchilla:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Ver
       dockerfile: Dockerfile

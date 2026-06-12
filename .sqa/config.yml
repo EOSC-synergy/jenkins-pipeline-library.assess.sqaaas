@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.8
+      branch: feature/pynblint_fix
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/indigo-dc/jenkins-pipeline-library:
       branch: master
@@ -15,54 +15,60 @@ sqa_criteria:
     repos:
       github.com/indigo-dc/jenkins-pipeline-library git:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-orange-tang.sh
-        container: qc.acc_flaky-saffron-bloodhound
+        - /usr/bin/env sh .sqa/script.ultramarine_balanced_roadrunner.sh
+        container: qc.acc_gamboge_plucky_chinchilla
   QC.Doc:
     repos:
       github.com/indigo-dc/jenkins-pipeline-library find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.cloudy-brown-greyhound.sh
-        container: qc.doc_hazy-seashell-penguin
+        - /usr/bin/env sh .sqa/script.nutmeg_aware_cheetah.sh
+        container: qc.doc_salmon_spontaneous_turkey
       github.com/indigo-dc/jenkins-pipeline-library git:
         commands:
-        - /usr/bin/env sh .sqa/script.crappy-amethyst-schnauzer.sh
-        container: qc.doc_sleepy-celadon-eleuth
+        - /usr/bin/env sh .sqa/script.zinnia_creative_reindeer.sh
+        container: qc.doc_incarnadine_vibrant_gazelle
       github.com/indigo-dc/jenkins-pipeline-library markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-amber-barnacle.sh
-        container: qc.doc_ugly-lavender-schnauzer
+        - /usr/bin/env sh .sqa/script.cyan_plucky_beaver.sh
+        container: qc.doc_periwinkle_apprehensive_pegasus
       github.com/indigo-dc/jenkins-pipeline-library restructuredtext-lint:
         commands:
-        - /usr/bin/env sh .sqa/script.cranky-violet-rottweiler.sh
-        container: qc.doc_zippy-black-newt
+        - /usr/bin/env sh .sqa/script.vermilion_funny_iguana.sh
+        container: qc.doc_rose_understanding_sloth
   QC.Lic:
     repos:
       github.com/indigo-dc/jenkins-pipeline-library licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.muggy-celadon-hare.sh
-        container: qc.lic_fuzzy-celadon-falcon
+        - /usr/bin/env sh .sqa/script.fuchsia_rugged_anaconda.sh
+        container: qc.lic_peach_understanding_camel
   QC.Met:
     repos:
       github.com/indigo-dc/jenkins-pipeline-library cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-corn-axolotl.sh
-        container: qc.met_baggy-dandelion-cuscus
+        - /usr/bin/env sh .sqa/script.glacier_clever_sparrow.sh
+        container: qc.met_lapis_tolerant_flamingo
   QC.Sec:
     repos:
       github.com/indigo-dc/jenkins-pipeline-library bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.breezy-green-caiman.sh
-        container: qc.sec_cranky-russet-koala
+        - /usr/bin/env sh .sqa/script.lemon_patient_camel.sh
+        container: qc.sec_gamboge_melancholy_horse
   QC.Sty:
     repos:
       github.com/indigo-dc/jenkins-pipeline-library flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.sunny-wisteria-snail.sh
-        container: qc.sty_hasty-heliotrope-turkey
+        - /usr/bin/env sh .sqa/script.cornflower_grumpy_crow.sh
+        container: qc.sty_magenta_sympathetic_penguin
+  QC.Uni:
+    repos:
+      github.com/indigo-dc/jenkins-pipeline-library pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.emerald_peppy_osprey.sh
+        container: qc.uni_gold_carefree_hornbill
   QC.Ver:
     repos:
       github.com/indigo-dc/jenkins-pipeline-library get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.skimpy-cinnamon-shrimp.sh
-        container: qc.ver_paltry-lilac-bloodhound
+        - /usr/bin/env sh .sqa/script.ice_outgoing_bison.sh
+        container: qc.ver_nutmeg_ardent_chinchilla
 timeout: 5400
